@@ -15,6 +15,7 @@ datasource db {
 // User model for authentication
 model User {
   id        Int       @id @default(autoincrement())  //id marks it as the primary key
+  username  String    @unique
   email     String    @unique
   password  String    // Hashed password
   name      String
@@ -24,7 +25,7 @@ model User {
   // Relations
   mealLogs  MealLog[]
   
-  @@map("users") //table name is 'users'
+  @@map("users") // Table name is 'users'
 }
 
 // MealLog model for tracking food intake
