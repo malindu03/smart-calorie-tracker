@@ -28,8 +28,4 @@ const checkValidation = (req, res, next) => {
     next();
 };
 
-module.exports = {
-    validateRegister,
-    validateLogin,
-    checkValidation
-};
+module.exports = {validateRegister, validateLogin, checkValidation};

@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors'); // Middleware to enable cross-origin resource sharing
 const dotenv = require('dotenv'); 
 const authRoutes = require('./routes/authRoutes');
+const userRoutes = require('./routes/userRoutes');
 
 // Load environment variables
 dotenv.config();
@@ -25,6 +26,9 @@ app.get('/api/health', (req, res) => {
 
 // Mount auth routes
 app.use('/api/auth', authRoutes);
+
+// Mount user routes
+app.use('/api/users', userRoutes);
 
 // 404 handler for undefined routes
 app.use((req, res) => {
